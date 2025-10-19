@@ -1,66 +1,314 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Laravel 11 Boilerplate (Enhanced Edition) by Refkinscallv
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern Laravel 11 boilerplate with extended utilities and command tools for faster and cleaner backend development.
+Includes built-in JWT, Mailer, Validator, Service base classes, and artisan generators.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🧩 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🔧 Core Enhancements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Laravel 11 base** with extended architecture.
+* **Additional libraries**:
 
-## Learning Laravel
+  * [`firebase/php-jwt`](https://github.com/firebase/php-jwt) – For secure JWT handling.
+  * [`phpmailer/phpmailer`](https://github.com/PHPMailer/PHPMailer) – For direct email sending via SMTP.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🎨 Frontend Packages
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📦 CSS & UI
 
-## Laravel Sponsors
+| Library                                                                 | CDN                      | Description                                            |
+| ----------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------ |
+| [Tailwind CSS](https://tailwindcss.com)                                 | `@tailwindcss/browser@4` | Utility-first CSS framework                            |
+| [DaisyUI](https://daisyui.com)                                          | `@5`                     | Prebuilt UI components for Tailwind                    |
+| [Remix Icon](https://remixicon.com)                                     | `@4.5.0`                 | Lightweight and modern icon pack                       |
+| [Tom Select](https://tom-select.js.org)                                 | `@2.4.3`                 | Dropdown and autocomplete control                      |
+| [DataTables](https://datatables.net)                                    | `dt-2.3.4`               | Interactive tables with search, export, and pagination |
+| [Google Fonts – Quicksand](https://fonts.google.com/specimen/Quicksand) |                          | Main application font                                  |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### ⚙️ JavaScript & Tools
 
-### Premium Partners
+| Library                                                          | CDN                      | Description                          |
+| ---------------------------------------------------------------- | ------------------------ | ------------------------------------ |
+| [jQuery](https://jquery.com)                                     | `3.7.1`                  | DOM manipulation & event handling    |
+| [Axios](https://axios-http.com)                                  | Latest CDN               | HTTP client for API calls            |
+| [Tom Select JS](https://tom-select.js.org)                       | `@2.4.3`                 | Select dropdown controller           |
+| [PDFMake](https://pdfmake.github.io/docs/)                       | `0.2.7`                  | Client-side PDF generation           |
+| [DataTables JS Bundle](https://datatables.net/download/)         | Matched with CSS version | Export and responsive features       |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 🧠 Internal JS Modules
 
-## Contributing
+| File               | Description                                                         |
+| ------------------ | ------------------------------------------------------------------- |
+| `alert.js`         | Custom SweetAlert-like modal using `<dialog>`                       |
+| `axios.js`         | Axios wrapper with interceptor for unified error handling           |
+| `common.js`        | Global helpers (form handling, formatting, tables, selects, etc.)   |
+| `prompt.js`        | Custom prompt modal for user input                                  |
+| `state.js`         | Lightweight reactive state handler                                  |
+| `common.js (main)` | Entry point for UI initialization, flash system, theme toggle, etc. |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 🖼️ Style & Behavior
 
-## Code of Conduct
+* Default font: **Quicksand**
+* Minimalist custom scrollbar
+* Dark/light theme toggle with `localStorage.themeMode`
+* Right-click disabled and history caching prevention
+* Loading overlay and image preview system
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🧠 Custom Commands
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 🛠 ServiceMaker
 
-## License
+Generate a new service file under `app/Services`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan make:service UserService
+```
+
+### 🧾 ValidatorMaker
+
+Generate a new validator file under `app/Http/Validators`.
+
+```bash
+php artisan make:validator UserValidator
+```
+
+---
+
+## 🧱 Base Architecture
+
+### 1. **Base Controller**
+
+Path: `app/Http/Controllers/Controller.php`
+Provides two helper methods:
+
+* `json()` → unified JSON API response.
+* `view()` → render view with optional headers and status code.
+
+---
+
+### 2. **Middleware: Cache**
+
+Path: `app/Http/Middleware/Cache.php`
+Automatically disables client-side caching for every request:
+
+```php
+Cache-Control: no-cache, no-store, must-revalidate
+```
+
+---
+
+### 3. **Base Validator**
+
+Path: `app/Http/Validators/Base.php`
+Simplifies request validation and alias mapping with a consistent structure:
+
+```php
+[
+  'status' => true|false,
+  'data'   => [...],
+  'error'  => [...]
+]
+```
+
+---
+
+### 4. **Base Service**
+
+Path: `app/Services/Base.php`
+Provides a unified layer for:
+
+* Safe database transactions (`handler()`)
+* File management (upload, delete, multiple uploads)
+* Database error parsing
+* Unified JSON response builder
+
+Includes helpers like:
+
+* `uploadSingleFile()`
+* `uploadMultipleFiles()`
+* `uploadUrlFile()`
+* `deleteFile()` / `deleteMultipleFiles()`
+* `upsertHasOne()` for relational updates
+
+---
+
+### 5. **Flash Utils**
+
+Path: `app/Utils/Flash.php`
+Lightweight session flash helper:
+
+```php
+flash('success', 'User created!');
+flash_get('success'); // => "User created!"
+flash_clear(); // clear all flash data
+```
+
+---
+
+### 6. **JWT Utils**
+
+Path: `app/Utils/JWT.php`
+Wrapper for `firebase/php-jwt` with `.env` auto-configuration.
+
+Methods:
+
+* `JWT::generate($payload, $ttl = 0)`
+* `JWT::verify($token)`
+* `JWT::decode($token)`
+* `JWT::encode($data)`
+
+Supported `.env` keys:
+
+```env
+JWT_ALGO=HS256
+JWT_SECRET=your-secret-key
+JWT_TTL=3600
+```
+
+---
+
+### 7. **Mailer Utils**
+
+Path: `app/Utils/Mailer.php`
+Wrapper for `PHPMailer` with Laravel-style configuration.
+
+Config file: `config/phpmailer.php`
+
+```php
+return [
+  'debug' => env('MAILER_DEBUG', false),
+  'credentials' => [
+    'host' => env('MAILER_HOST', ''),
+    'auth' => env('MAILER_AUTH', true),
+    'user' => env('MAILER_USERNAME', ''),
+    'pass' => env('MAILER_PASSWORD', ''),
+    'secure' => env('MAILER_SECURE', true),
+  ],
+];
+```
+
+Supported `.env` keys:
+
+```env
+MAILER_DEBUG=false
+MAILER_HOST=
+MAILER_AUTH=true
+MAILER_NAME=
+MAILER_USERNAME=
+MAILER_PASSWORD=
+MAILER_SECURE=true
+```
+
+Usage:
+
+```php
+use App\Utils\Mailer;
+
+Mailer::send([
+  'to' => 'user@example.com',
+  'subject' => 'Welcome!',
+  'body' => '<b>Hello User</b>',
+]);
+```
+
+---
+
+### 8. **App Service Provider**
+
+Path: `app/Providers/AppServiceProvider.php`
+Automatically initializes `JWT` and `Mailer` on boot:
+
+```php
+JWT::init();
+Mailer::init(config('phpmailer'));
+```
+
+---
+
+### 9. **Custom Middleware Registration**
+
+`bootstrap/app.php` registers:
+
+* Web & API middleware groups
+* Global Cache middleware
+* Custom command registrations for `ServiceMaker` and `ValidatorMaker`
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/yourname/laravel-11-boilerplate.git
+cd laravel-11-boilerplate
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+```
+
+Then serve your app:
+
+```bash
+php artisan serve
+```
+
+---
+
+## 🧪 Requirements
+
+* PHP **>= 8.2**
+* Composer **>= 2.x**
+* Laravel **11.x**
+* MySQL or SQLite (for default migrations)
+* OpenSSL (for JWT)
+
+---
+
+## 🧤 Example Usage
+
+### ✅ API Controller Example
+
+```php
+namespace App\Http\Controllers;
+
+use App\Services\UserService;
+
+class UserController extends Controller
+{
+    public function index(UserService $service)
+    {
+        $response = $service->getAllUsers();
+        return $this->json($response);
+    }
+}
+```
+
+### ✅ Service Example
+
+```php
+namespace App\Services;
+
+class UserService extends Base
+{
+    public function getAllUsers()
+    {
+        return $this->handler(function () {
+            $users = \App\Models\User::all();
+            return $this->json(true, 200, 'Success', $users);
+        });
+    }
+}
+```
+
+---
+
+## 🧰 License
+
+This project is open-sourced software licensed under the **MIT license**.
