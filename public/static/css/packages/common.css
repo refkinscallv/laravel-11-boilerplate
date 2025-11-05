@@ -4,6 +4,8 @@
 @import url('https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css');
 @import url('https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/css/tom-select.css');
 @import url('https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.4/b-3.2.5/b-colvis-3.2.5/b-print-3.2.5/r-3.0.7/datatables.min.css');
+@import url('https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css');
+@import url('https://unpkg.com/filepond@4.32.10/dist/filepond.min.css');
 
 html, body {
     font-family: "Quicksand", serif  !important;
@@ -91,6 +93,10 @@ img[data-preview] {
 dialog .modal-box {
     max-height: 90vh !important;
     overflow: auto !important;
+}
+
+dialog .modal-title {
+    margin-bottom: 20px !important;
 }
 
 .ts-dropdown {

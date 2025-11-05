@@ -74,32 +74,32 @@ window.Common = class Common {
             for (let i = 0; i < keys.length; i++) {
                 const key = keys[i]
 
-                // Jika key berikutnya adalah undefined dan ini array (karena pakai [] kosong)
+                // If the next key is undefined and this is an array (because of empty [])
                 const isLast = i === keys.length - 1
                 const nextKey = keys[i + 1]
 
                 if (nextKey === undefined && isLast) {
-                    // Akhir dari path
+                    // End of path
                     if (Array.isArray(current)) {
                         current.push(value)
                     } else if (typeof current === 'object') {
                         current[key] = value
                     }
                 } else if (nextKey === '') {
-                    // Jika pola `payment_detail[]`
+                    // For pattern like `payment_detail[]`
                     if (!current[key]) {
                         current[key] = []
                     }
 
-                    // Pastikan elemen terakhir array adalah object kosong atau sudah terisi sebagian
+                    // Ensure last element is an object (either empty or partially filled)
                     if (current[key].length === 0 || Object.keys(current[key][current[key].length - 1] || {}).length === keys.length - i - 1) {
                         current[key].push({})
                     }
 
                     current = current[key][current[key].length - 1]
-                    i++ // Skip empty string key (karena [])
+                    i++ // Skip empty string key (because of [])
                 } else {
-                    // Struktur object biasa
+                    // Regular object structure
                     if (!current[key]) current[key] = {}
                     current = current[key]
                 }
@@ -236,20 +236,20 @@ window.Common = class Common {
             serverSide: true,
             responsive: true,
             language: {
-                processing: 'Memproses...',
-                search: 'Cari :&emsp;',
-                lengthMenu: '_MENU_&emsp;baris',
-                info: 'Menampilkan _START_ - _END_ dari _TOTAL_ baris',
-                infoEmpty: 'Menampilkan 0 - 0 dari 0 baris',
-                infoFiltered: '(Difilter dari total _MAX_ baris)',
-                loadingRecords: 'Memuat...',
-                zeroRecords: 'Tidak ada data yang cocok ditemukan',
-                emptyTable: 'Tidak ada data tersedia pada tabel',
+                processing: 'Processing...',
+                search: 'Search:&emsp;',
+                lengthMenu: '_MENU_&emsp;rows',
+                info: 'Showing _START_ - _END_ of _TOTAL_ rows',
+                infoEmpty: 'Showing 0 - 0 of 0 rows',
+                infoFiltered: '(Filtered from _MAX_ total rows)',
+                loadingRecords: 'Loading...',
+                zeroRecords: 'No matching data found',
+                emptyTable: 'No data available in table',
                 paginate: {
-                    first: 'Awal',
-                    previous: 'Sebelumnya',
-                    next: 'Selanjutnya',
-                    last: 'Akhir',
+                    first: 'First',
+                    previous: 'Previous',
+                    next: 'Next',
+                    last: 'Last',
                 },
             },
             ...config,
@@ -257,7 +257,7 @@ window.Common = class Common {
     }
 
     static createSelect(data) {
-        const { el = null, url = '', col = ['id', 'name'], search = 'Cari...', max = 10, setValue = null, ...opts } = data
+        const { el = null, url = '', col = ['id', 'name'], search = 'Search...', max = 10, setValue = null, ...opts } = data
 
         const instance = new TomSelect(el, {
             valueField: col[0],
@@ -310,7 +310,7 @@ window.Common = class Common {
     static kmbFormat(number, precision = 1) {
         if (number < 1000) return String(number)
 
-        const units = ['', 'Rb', 'Jt', 'M', 'T']
+        const units = ['', 'K', 'M', 'B', 'T']
         const base = 1000
         const i = Math.floor(Math.log(number) / Math.log(base))
         const value = number / Math.pow(base, i)
@@ -322,15 +322,15 @@ window.Common = class Common {
         const numbers = Array.from(
             { length: max - min + 1 },
             (_, i) => i + min
-        );
+        )
 
-        const shuffled = numbers.sort(() => 0.5 - Math.random());
+        const shuffled = numbers.sort(() => 0.5 - Math.random())
 
-        return shuffled.slice(0, count);
+        return shuffled.slice(0, count)
     }
 
     static sleep(ms = 1000) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise(resolve => setTimeout(resolve, ms))
     }
 
     static loadingToggle(sh = false) {

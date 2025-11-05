@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Utils\Mailer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
@@ -204,5 +205,13 @@ class Base
 
         $model->save();
         return $model;
+    }
+
+    public function sendMail(string $template = '', array $data = [], array $opts = [])
+    {
+        return Mailer::send([
+            ...$opts,
+            'body' => view($template, $data)->render(),
+        ]);
     }
 }

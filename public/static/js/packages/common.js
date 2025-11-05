@@ -3,6 +3,10 @@ import 'https://code.jquery.com/jquery-3.7.1.min.js'
 import 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'
 import 'https://cdn.jsdelivr.net/npm/tom-select@2.4.3/dist/js/tom-select.complete.min.js'
 import 'https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.4/b-3.2.5/b-colvis-3.2.5/b-print-3.2.5/r-3.0.7/datatables.min.js'
+import 'https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js'
+import 'https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js'
+import 'https://unpkg.com/filepond/dist/filepond.min.js'
+import 'https://unpkg.com/jquery-filepond/filepond.jquery.js'
 
 // Internal
 import './libs/alert.js'

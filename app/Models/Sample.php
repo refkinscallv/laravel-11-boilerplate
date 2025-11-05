@@ -7,7 +7,7 @@
 // use Illuminate\Foundation\Auth\User as Authenticatable;
 // use Illuminate\Notifications\Notifiable;
 
-// class UserSample extends Authenticatable
+// class Sample extends Authenticatable
 // {
 //     use HasFactory, Notifiable;
 

@@ -8,6 +8,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return $this->view('layouts.index', 'index.welcome');
+        return $this->view('pages.welcome', [
+            'page' => $this->pageInfo('Laravel 11 Boilerplate (Enhanced Edition) by Refkinscallv'),
+        ]);
     }
 }

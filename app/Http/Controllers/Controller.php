@@ -41,11 +41,25 @@ abstract class Controller
         ], $code);
     }
 
-    public function view(string $layout = '', string $view = '', array $data = [], array $headers = [], int $code = 200): Response
+    public function view(string $view = '', array $data = [], array $headers = [], int $code = 200): Response
     {
-        return response()->view('templates.base', array_merge([
-            'layout' => $layout,
-            'view' => $view
-        ], $data),$code, $headers);
+        return response()->view(
+            $view,
+            [
+                'flash' => flash_all(),
+                ...$data
+            ],
+            $code,
+            $headers
+        );
+    }
+
+    protected function pageInfo(string $title = '', string $key = '', string $icon = '')
+    {
+        return (object) [
+            'key' => $key,
+            'title' => $title ?? 'Unknown Page',
+            'icon' => $icon ?? 'ri-question-line',
+        ];
     }
 }
